@@ -7,6 +7,12 @@ pattern and optional keyfiles. Written in C# with WinForms on .NET 8.
 > has reviewed. Do not use Snowy to protect data whose loss or exposure would matter. For that, use a vetted
 > tool such as [VeraCrypt](https://www.veracrypt.fr/), [age](https://age-encryption.org/) or 7-Zip with AES-256.
 
+## Screenshots
+
+| App | Puzzle | Choosing |
+|---------|----------------|--------|
+| ![App](docs/images/encrypt.gif) | ![Puzzle dialog](docs/images/puzzle.png) | ![Menu](docs/images/themes.png) |
+
 ## Protection levels
 
 | Level | Extension | What it needs | Notes |
