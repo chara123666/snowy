@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>Snowy</AssemblyName>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- Only wired up once icon.ico actually exists in the project root — otherwise
+       the compiler hard-fails the whole build looking for a missing file. -->
+  <PropertyGroup Condition="Exists('icon.ico')">
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Fonts\Lancelot-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <!-- Every mp3 in Sounds/ is copied next to the exe. A wildcard that matches
+         nothing is fine, so the build never fails on a missing sound. -->
+    <None Include="Sounds\*.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Argon2id for the key derivation (.NET has no built-in one) -->
+    <PackageReference Include="Konscious.Security.Cryptography.Argon2" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- lets the test project see the internal helpers it needs -->
+    <InternalsVisibleTo Include="Snowy.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- the test project lives in a sub-folder; keep its sources out of the app build -->
+    <Compile Remove="Snowy.Tests\**" />
+    <EmbeddedResource Remove="Snowy.Tests\**" />
+    <None Remove="Snowy.Tests\**" />
+  </ItemGroup>
+</Project>

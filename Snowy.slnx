@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Snowy.csproj" />
+  <Project Path="Snowy.Tests/Snowy.Tests.csproj" />
+</Solution>
