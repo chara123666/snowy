@@ -1,12 +1,11 @@
 # Sounds
 
-Snowy plays two optional UI sounds from this folder:
+Snowy plays two short UI sounds from this folder. Both are in the repository and in every release build.
 
-| File        | Played when                          |
-|-------------|--------------------------------------|
-| `ui.mp3`    | language change, snow switched on    |
-| `theme.mp3` | a theme is picked                    |
+| File        | Played when                          | Source |
+|-------------|--------------------------------------|--------|
+| `ui.mp3`    | language change, snow switched on    | Universfield, [Pixabay](https://pixabay.com/) |
+| `theme.mp3` | a theme is picked                    | SoundReality, [Pixabay](https://pixabay.com/) |
 
-Put your own files here (any short MP3). They are **not tracked by git** (see `.gitignore`) because the
-repository can only contain audio whose license allows redistribution — use your own recordings, or
-CC0 / public-domain sounds. Without the files the app simply stays silent.
+The files are used under the [Pixabay Content License](https://pixabay.com/service/license-summary/).
+If you replace them, keep the same file names; the app loads them by name and runs silently if they are missing.
